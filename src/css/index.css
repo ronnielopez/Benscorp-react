@@ -1,0 +1,624 @@
+body {
+  background-color: #fff;
+}
+
+@font-face {
+  font-family: 'Louis George Cafe Bold';
+  src: url('../font/Louis George Cafe Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Louis George Cafe';
+  src: url('../font/Louis George Cafe.ttf');
+}
+
+#header .carousel-indicators{
+        justify-content: left;
+        bottom: -20px;
+        margin-left: 0px; 
+}
+
+.indicators {
+  justify-content: left;
+  margin-bottom: 100px;
+  margin-left: 39px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.line_black {
+  border-color: #000;
+  border-left-style: solid;
+}
+
+.line_black_reverse {
+  border-color: #000;
+  border-right-style: solid;
+}
+
+.line_white_reverse {
+  border-color: #fff;
+  border-right-style: solid;
+  margin-top: 120px;
+  text-align: right;
+}
+
+.pequeno {
+  font-size: small;
+  text-align: right;
+}
+
+h3 {
+  text-align: right;
+  font-family: 'Louis George Cafe Bold';
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.letter_responsive {
+  font-size: 2rem;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+.letter_responsive_contact {
+  font-size: 2rem;
+}
+
+.letter_responsive_quienes {
+  font-size: 2rem;
+}
+
+/*Responsive primer menu*/
+
+@media screen and (min-width: 701px) {
+  .letra_menu {
+    font: normal normal normal 20px/24px Louis George Café;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .letra_menu {
+    font-size: 10pt;
+  }
+  .esconder {
+    display: none;
+  }
+}
+
+.padding_left_historia {
+  padding-left: 10px;
+}
+
+@media screen and (min-width: 601px) {
+  .letter_responsive {
+    font-size: 2rem;
+    padding-right: 15px;
+  }
+  .letter_responsive_contact {
+    font-size: 2rem;
+    padding-right: 10px;
+  }
+  .letter_responsive_quienes {
+    font-size: 2rem;
+  }
+  .letter_responsive_servicio {
+    font-size: 2rem;
+    padding-right: 10px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+
+@media screen and (max-width: 600px) {
+  .letter_responsive_servicio {
+    font-size: 2rem;
+    padding-right: 10px;
+  }
+  .letter_responsive_contact {
+    font-size: 2rem;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  .letter_responsive_quienes {
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+  .reduce {
+    width: 100% !important;
+  }
+  .img_responsive {
+    width: 200px !important;
+  }
+  .img_resposive {
+    width: 216px !important;
+  }
+}
+
+.bg-overlay {
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("../img/slide-2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  height: 450px;
+  padding-top: 50px;
+}
+
+.reduce {
+  width: 40%;
+}
+
+section {
+  padding: 2rem;
+}
+
+.shadow {
+  background-color: #F5F5F5;
+}
+
+.line_buttom {
+  border-bottom-color: #fff;
+  border-bottom-style: solid;
+}
+
+.line_bottom_black {
+  border-bottom-color: #000;
+  border-bottom-style: solid;
+  width: 191px;
+}
+
+.right {
+  text-align: end;
+}
+
+.step-heading {
+  height: 33px;
+  padding-bottom: 50px;
+  cursor: pointer;
+}
+
+.step:last-child .step-heading {
+  padding-bottom: 0;
+}
+
+.step-heading>a:hover {
+  text-decoration: none;
+}
+
+.step-heading .num {
+  width: 32px;
+  height: 32px;
+}
+
+.steps .step .line {
+  border-left: 1px solid #333;
+  left: 16px;
+  bottom: 0px;
+  top: 32px;
+}
+
+a {
+  color: #081156;
+}
+
+.bg-primary {
+  background-color: #081156 !important;
+}
+
+h2 {
+  color: #081156;
+  font-family: 'Louis George Cafe Bold' !important;
+}
+
+/* pruebas */
+
+.section-title {
+  position: relative
+}
+
+.section-title p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.section-title h4 {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: capitalize;
+  position: relative;
+  padding-bottom: 20px;
+  display: inline-block
+}
+
+.section-title h4:before {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 2px;
+  background-color: #d8d8d8;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40px;
+}
+
+.section-title h4:after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 2px;
+  background-color: #252d6e;
+  left: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -25px;
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.services {
+  background-color: #FBFBFB;
+}
+
+.single-service {
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  padding: 30px 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16)
+}
+
+.single-service:before {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #252d6e;
+  left: 0;
+  top: 0;
+  content: "";
+  -webkit-transition: .3s;
+  transition: .3s
+}
+
+.single-service:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #252d6e;
+  right: 0;
+  bottom: 0;
+  content: "";
+  -webkit-transition: .3s;
+  transition: .3s
+}
+
+.single-service:hover:after, .single-service:hover:before {
+  width: 50%;
+  height: 2px;
+  -webkit-transition: .3s;
+  transition: .3s
+}
+
+.single-service:hover {
+  box-shadow: 1px 3px 10px 0 rgba(0, 0, 0, 0.10)
+}
+
+.single-service h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  color: #AAB1AE;
+}
+
+.single-service p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.img_responsive {
+  width: 100%;
+}
+
+.carousel-item {
+  height: 55vh;
+  min-height: 350px;
+  width: 100%;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.lead {
+  text-align: right;
+}
+
+p, a {
+  font-family: 'Louis George Cafe';
+}
+
+h4 {
+  font-family: 'Louis George Cafe Bold';
+}
+
+.contact-form {
+  background: #fff;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 70%;
+}
+
+.contact-form .form-control {
+  border-radius: 1rem;
+}
+
+.contact-image {
+  text-align: center;
+}
+
+.contact-image img {
+  border-radius: 6rem;
+  width: 11%;
+  margin-top: -3%;
+  transform: rotate(29deg);
+}
+
+.contact-form form {
+  padding: 14%;
+}
+
+.contact-form form .row {
+  margin-bottom: -7%;
+}
+
+.contact-form h3 {
+  margin-bottom: 8%;
+  margin-top: -10%;
+  text-align: center;
+  color: #252d6e;
+}
+
+.links {
+  font-size: 40px;
+  color: #252d6e;
+}
+
+/* tabs */
+
+a:hover, a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.centro {
+  display: flex;
+  justify-content: center;
+}
+
+.tab .nav-tabs {
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.tab .nav-tabs li a {
+  display: block;
+  padding: 10px 60px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #112529;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+.tab .nav-tabs li a:hover, .tab .nav-tabs li.active a {
+  color: #000;
+  border: none;
+}
+
+.tab .nav-tabs li.active a:before {
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 25px;
+  font-weight: 700;
+  color: #252d6e;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+}
+
+.tab .nav-tabs li.active a:after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #252d6e;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease 0s;
+}
+
+.tab .tab-content {
+  padding: 30px 20px 20px;
+  margin-top: 0;
+  background: #fff;
+  font-size: 15px;
+  color: #7a9181;
+  line-height: 30px;
+  border-radius: 0 0 5px 5px;
+}
+
+.tab .tab-content h3 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 479px) {
+  .tab .nav-tabs li {
+    width: 100%;
+    text-align: center;
+  }
+  .tab .nav-tabs li.active a:before {
+    content: "\f105";
+    bottom: 15%;
+    left: 0;
+    right: auto;
+  }
+}
+
+/* Boton */
+
+.button {
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  margin: 1em 0.8em;
+}
+
+.button.type1 {
+  color: #566473;
+  font-family: 'Louis George Cafe';
+}
+
+.button.type1.type1::after, .button.type1.type1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+}
+
+.button.type1.type1::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #252d6e;
+  border-right-color: #252d6e;
+}
+
+.button.type1.type1::before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #252d6e;
+  border-left-color: #252d6e;
+}
+
+.button.type1.type1:hover:after, .button.type1.type1:hover:before {
+  width: 100%;
+  height: 100%;
+}
+
+.button.type4 {
+  color: #000;
+  font-family: 'Louis George Cafe';
+}
+
+.button.type4::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  background-color: #252d6e;
+  transition: width 0.3s ease-in-out;
+}
+
+.button.type4::after {
+  bottom: 0;
+}
+
+.button.type4:hover::after {
+  width: 50px;
+}
+
+.carousel-caption {
+  bottom: 17%;
+}
+
+.card-titulo {
+  position: relative;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.collapse-content {
+  position: relative;
+  text-align: center;
+}
+
+.indicatorsblack .carousel-indicators li{
+  background-color: #000;
+}
+
+.letraspequenas{
+  font-size: 11px;
+}
+@media screen and (max-width: 410px) {
+  .letraspequenas{
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 411px) {
+  .letraspequenas{
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .letraspequenas{
+    font-size: 9px;
+  }
+}
+
+.esconder .card-body{
+  height: 26rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .esconder .card-body{
+    height: 32rem;
+  }
+}
+
+#QuienesSomos .tab-content{
+  background-color: #fff;
+}
+

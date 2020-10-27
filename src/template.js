@@ -4,6 +4,8 @@ import Navbar2 from './components/navbar/Navbar2';
 import Socios from './components/sections/nuestrosSocios';
 import QuienesSomos from './components/sections/quienesSomos';
 import Servicio from './components/sections/servicios';
+import Alianzas from './components/sections/alianzas';
+import Contacto from './components/sections/contacto';
 import SliderPrincipal from './components/sections/SliderPrincipal'
 function Template() {
   return (
@@ -23,10 +25,18 @@ function Template() {
         <Servicio />
       </section>
 
-      <section id='nuestrosocios'>
+      <section id='nuestrosocios' class="seccion-tarjeta">
         <Socios/>
       </section>
+
+      <section id='alianzas'>
+        <Alianzas/>
+      </section>
       
+      <section id='contacto'>
+        <Contacto/>
+      </section>
+
     </>
   );
 }

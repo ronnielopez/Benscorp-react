@@ -7,9 +7,12 @@ import Servicio from './components/sections/servicios';
 import Alianzas from './components/sections/alianzas';
 import Contacto from './components/sections/contacto';
 import SliderPrincipal from './components/sections/SliderPrincipal'
+import ModalInicio from './components/modal/modalInicio';
 function Template() {
   return (
     <>
+      {/* Modal de bienvenida*/}
+      <ModalInicio />
       {/* Primer navbar donde esta los contactos*/}
       <Navbar />
       {/* El segundo es el menu donde esta la navegacion de la pagina */}
@@ -24,10 +27,11 @@ function Template() {
       <section id="servicio">
         <Servicio />
       </section>
-
-      <section id='nuestrosocios' class="seccion-tarjeta">
+      
+      {/*Section de Servicios
+      <section id='nuestrosocios' className="seccion-tarjeta">
         <Socios/>
-      </section>
+      </section>*/}
 
       <section id='alianzas'>
         <Alianzas/>

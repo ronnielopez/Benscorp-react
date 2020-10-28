@@ -218,6 +218,11 @@ h2 {
   font-family: 'Louis George Cafe Bold' !important;
 }
 
+.textoBlanco{
+  color: #fff;
+  font-family: 'Louis George Cafe' !important;
+}
+
 /* pruebas */
 
 .section-title {
@@ -340,16 +345,7 @@ h2 {
   width: 100%;
 }
 
-.carousel-item {
-  height: 55vh;
-  min-height: 350px;
-  width: 100%;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 
 .lead {
   text-align: right;
@@ -702,4 +698,29 @@ a:hover, a:focus {
   .tarjeta{
     margin: 2rem;
   }
+}
+
+.textoModificadoG .carousel-caption{
+  bottom: 0px;
+  right: 1%;
+
+}
+
+.textoModificadoP .carousel-caption{
+  bottom: 0px;
+  right: 1%;
+
+}
+
+#servicio .carousel-indicators{
+  bottom: -58px;
+}
+.textoModificadoG .carousel-item {
+  height: 55vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

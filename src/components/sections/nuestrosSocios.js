@@ -60,7 +60,7 @@ const Socios = () => {
                             minima maiores voluptas numquam labore alias maxime at recusandae 
                             ipsum nesciunt eligendi sed eaque. Autem, atque inventore.
                             </p>
-                            <ul class="redes-sociales">
+                            <ul className="redes-sociales">
                                 <li><a href=""><i className="fab fa-linkedin-square"></i></a></li>
                                 <li><a href=""><i className="fas fa-envelope"></i></a></li>
                             </ul>

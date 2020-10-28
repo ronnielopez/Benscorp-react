@@ -8,6 +8,7 @@ const QuienesSomos = () => {
                 id="QS-controlled-tabs"
                 activeKey={key}
                 onSelect={(k) => setKey(k)}
+                transition={false}
             >
                 <Tab eventKey="Historia" title="Historia">
                     <p className="m-3">Benscorp nace en 2003 como una empresa consultora, enfocada en solucionar y asesorar

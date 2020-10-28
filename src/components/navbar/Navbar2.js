@@ -2,7 +2,8 @@ import React from 'react';
 import { Nav } from 'react-bootstrap';
 import logo from '../../img/logo.png'
 import Navbar from "react-bootstrap/Navbar"
-const Navbar2 = () => {
+class Navbar2 extends React.Component {
+    render(){
     return (
         <>
             <Navbar collapseOnSelect expand="sm" sticky="top" className="bg-white">
@@ -21,7 +22,7 @@ const Navbar2 = () => {
                 </Navbar.Collapse>
             </Navbar>
         </>
-    )
+    )}
 }
 
 export default Navbar2

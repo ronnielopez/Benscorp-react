@@ -8,6 +8,7 @@ import Alianzas from './components/sections/alianzas';
 import Contacto from './components/sections/contacto';
 import SliderPrincipal from './components/sections/SliderPrincipal'
 import ModalInicio from './components/modal/modalInicio';
+
 function Template() {
   return (
     <>

@@ -1,7 +1,6 @@
 import React, { setState, useState } from 'react';
+import swal from 'sweetalert';
 import { signIn } from '../../services/function';
-
-
 
 
 const Adminis = () => {
@@ -11,12 +10,12 @@ const Adminis = () => {
     const login = async ({ email, password }) => {
         try {
             await signIn(email, password)
-            window.location.href = 'admin/inicio'
+            swal({title: 'Bienvenido', icon: 'success', button: 'Aceptar', closeOnClickOutside: false, closeOnEsc: false}).then(value=>{window.location.href = 'admin/inicio'});
         } catch (error) {
             setError({
                 error: error.message
             })
-            console.log(error.message);
+            swal("Datos incorrectos", "Contraseña o correo incorrectos", "error");
         }
     }
     return (

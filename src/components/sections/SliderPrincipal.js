@@ -82,7 +82,7 @@ const SliderPrincipal = () => {
                         />
                         <Carousel.Caption>
                             <h3 className="textoBlanco">¿Quiénes somos?</h3>
-                            <span className='btn btn-secondary '>Saber mas</span>
+                            <span className='btn btn-secondary marginSlidercaption'>Saber mas</span>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -94,7 +94,7 @@ const SliderPrincipal = () => {
 
                         <Carousel.Caption>
                             <h3 className="text-right textoBlanco">¿Quiénes somos 2?</h3>
-                            <Button variant='secondary'>Saber mas</Button>
+                            <span className='btn btn-secondary marginSlidercaption'>Saber mas</span>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -106,7 +106,7 @@ const SliderPrincipal = () => {
 
                         <Carousel.Caption>
                             <h3 className="text-right textoBlanco">¿Quiénes somos 3?</h3>
-                            <Button variant='secondary'>Saber mas</Button>
+                            <span className='btn btn-secondary marginSlidercaption'>Saber mas</span>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

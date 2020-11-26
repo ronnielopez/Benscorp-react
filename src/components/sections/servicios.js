@@ -20,6 +20,12 @@ const Servicio = () => {
 
             <div className="row esconder">
                 {/*--------------- Primera fila --------------*/}
+                <Modals
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    animation={false}
+                />
+
                 <div className="col-lg-4 col-md-6">
                     <Card>
                         <Card.Body>
@@ -37,12 +43,6 @@ const Servicio = () => {
                     </Card>
                 </div>
 
-                <Modals
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                    animation={false}
-                />
-
                 <div className="col-lg-4 col-md-6">
                     <Card>
                         <Card.Body>
@@ -55,7 +55,7 @@ const Servicio = () => {
                                 en el país.
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                        <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                     </Card>
                 </div>
 
@@ -73,7 +73,7 @@ const Servicio = () => {
                                 de servicios legales.
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                        <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                     </Card>
                 </div>
 
@@ -89,7 +89,7 @@ const Servicio = () => {
                                 apoyo, permitiéndote enfocarte en la correcta implementación de la estrategia de tu negocio.
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                        <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                     </Card>
                 </div>
 
@@ -105,7 +105,7 @@ const Servicio = () => {
                                 a las necesidades de nuestros clientes.
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                        <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                     </Card>
                 </div>
 
@@ -123,7 +123,7 @@ const Servicio = () => {
                                 la compañía.
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                        <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                     </Card>
                 </div>
 
@@ -142,7 +142,7 @@ const Servicio = () => {
                                 las mejores decisiones que le permitan alcanzar las metas propuestas para su organización.
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                        <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                     </Card>
                 </div>
 
@@ -159,7 +159,7 @@ const Servicio = () => {
                                 plasmadas de manera correcta y concreta, al momento de realizarlas.
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                        <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                     </Card>
                 </div>
 
@@ -177,7 +177,7 @@ const Servicio = () => {
                                 para el mismo, generando resultados por debajo de su potencial de cambio.
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                        <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                     </Card>
                 </div>
             </div>
@@ -200,7 +200,7 @@ const Servicio = () => {
                                     para el mismo, generando resultados por debajo de su potencial de cambio.
                             </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                     {/*Item de slider*/}
@@ -216,7 +216,7 @@ const Servicio = () => {
                                     plasmadas de manera correcta y concreta, al momento de realizarlas.
                             </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                     {/*Item de slider*/}
@@ -233,7 +233,7 @@ const Servicio = () => {
                                     las mejores decisiones que le permitan alcanzar las metas propuestas para su organización.
                             </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                     {/*Item de slider*/}
@@ -250,7 +250,7 @@ const Servicio = () => {
                                     la compañía.
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                     {/*Item de slider*/}
@@ -266,7 +266,7 @@ const Servicio = () => {
                                     a las necesidades de nuestros clientes.
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                     {/*Item de slider*/}
@@ -281,7 +281,7 @@ const Servicio = () => {
                                     apoyo, permitiéndote enfocarte en la correcta implementación de la estrategia de tu negocio.
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                     {/*Item de slider*/}
@@ -298,7 +298,7 @@ const Servicio = () => {
                                     de servicios legales.
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                     {/*Item de slider*/}
@@ -314,7 +314,7 @@ const Servicio = () => {
                                     en el país.
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                     {/*Item de slider*/}
@@ -331,7 +331,7 @@ const Servicio = () => {
                                     fiscales, consolidación fiscal, entre otros.
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer className="text-muted text-center">Conoce mas</Card.Footer>
+                            <Card.Footer className="text-muted text-center"><a href='#' className='text-muted' onClick={() => setModalShow(true)}>Conoce mas</a></Card.Footer>
                         </Card>
                     </Carousel.Item>
                 </Carousel>
@@ -374,7 +374,7 @@ function Modals(props) {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant='secondary' onClick={props.onHide}>Close</Button>
+                <Button variant='secondary' onClick={props.onHide}>Cerrar</Button>
                 <Button variant='success'>Enviar </Button>
             </Modal.Footer>
         </Modal>

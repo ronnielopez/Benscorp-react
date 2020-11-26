@@ -724,3 +724,11 @@ a:hover, a:focus {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.iconosadmin{
+  font-size: 1.6rem;
+}
+
+.marginSlidercaption{
+  margin-left: 150px;
+}

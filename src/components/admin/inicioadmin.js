@@ -12,6 +12,10 @@ const InicioAd = () => {
 
     const [contador, setContador] = useState(0)
 
+    const [newItem, setNewItem] = useState('')
+
+    const [action, setAction] = useState(0)
+
     
     useEffect(() => {
         const unsuscribe = db.collection('noticias').orderBy('creado', 'desc').onSnapshot(snapshot => {

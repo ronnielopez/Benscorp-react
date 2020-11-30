@@ -23,38 +23,51 @@ const InicioAd = () => {
             <div className="container m-5">
                 <h1>Noticias</h1>      
                 <ListGroup variant="flush">
-                    <ListGroup.Item>Nombre</ListGroup.Item>
                     <ListGroup.Item>
                         <div className="d-flex justify-content-between">
-                            <span className="font-weight-bold">Noticia 1</span>
-                            <span>Contiene imagen</span>
-                            <div className="row">
-                                <OverlayTrigger
-                                key="edit"
-                                placement="top"
-                                overlay={
-                                    <Tooltip id={`tooltip-top-edit`}>
-                                        Editar
-                                    </Tooltip>
-                                }
-                                >
-                                    <div role="button" className="bg-warning text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
-                                        <i className="fas fa-pen"></i>
-                                    </div>
-                                </OverlayTrigger>
-                                <OverlayTrigger
-                                key="edit"
-                                placement="top"
-                                overlay={
-                                    <Tooltip id={`tooltip-top-edit`}>
-                                        Eliminar
-                                    </Tooltip>
-                                }
-                                >
-                                    <div role="button" className="bg-danger text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
-                                        <i className="fas fa-trash"></i>
-                                    </div>
-                                </OverlayTrigger>
+                            <span>Noticia</span>
+                            <span className="text-secondary">Acciones</span>
+                        </div>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        <div className="d-flex justify-content-between">
+                            <div>
+                                <div className="font-weight-bold">Noticia 1</div>
+                                <div className="text-secondary">Ingresado: martes 27 de diciembre</div>
+                            </div>
+                            <div className="row align-self-center">
+                                <i className="far fa-image align-self-center mr-3"></i>
+                                <span>Contiene imagen</span>
+                            </div>
+                            <div>
+                                <div className="row">
+                                    <OverlayTrigger
+                                    key="edit"
+                                    placement="top"
+                                    overlay={
+                                        <Tooltip id={`tooltip-top-edit`}>
+                                            Editar
+                                        </Tooltip>
+                                    }
+                                    >
+                                        <div role="button" className="bg-warning text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
+                                            <i className="fas fa-pen"></i>
+                                        </div>
+                                    </OverlayTrigger>
+                                    <OverlayTrigger
+                                    key="edit"
+                                    placement="top"
+                                    overlay={
+                                        <Tooltip id={`tooltip-top-edit`}>
+                                            Eliminar
+                                        </Tooltip>
+                                    }
+                                    >
+                                        <div role="button" className="bg-danger text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
+                                            <i className="fas fa-trash"></i>
+                                        </div>
+                                    </OverlayTrigger>
+                                </div>
                             </div>
                         </div>
                     </ListGroup.Item>

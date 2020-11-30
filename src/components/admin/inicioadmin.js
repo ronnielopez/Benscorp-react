@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Navbar, Nav , Table, Form, Modal, Button} from 'react-bootstrap';
+import { Navbar, Nav , Table, Form, Modal, Button, ListGroup, OverlayTrigger, Tooltip} from 'react-bootstrap';
 
 const InicioAd = () => {
 
@@ -20,32 +20,45 @@ const InicioAd = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <h1 className='text-center'>Bienvenido</h1>
-            <div className='container'>
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th className='text-center'>Noticia</th>
-                            <th className='text-center'>Fecha</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td> 
-                            <div className='text-center iconosadmin'><i className="fas fa-pen"></i></div>
-                            </td>
-                            <td> 
-                            <div className='text-center iconosadmin'><i className="fas fa-trash"></i></div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </Table>
+            <div className="container m-5">
+                <h1>Noticias</h1>      
+                <ListGroup variant="flush">
+                    <ListGroup.Item>Nombre</ListGroup.Item>
+                    <ListGroup.Item>
+                        <div className="d-flex justify-content-between">
+                            <span className="font-weight-bold">Noticia 1</span>
+                            <span>Contiene imagen</span>
+                            <div className="row">
+                                <OverlayTrigger
+                                key="edit"
+                                placement="top"
+                                overlay={
+                                    <Tooltip id={`tooltip-top-edit`}>
+                                        Editar
+                                    </Tooltip>
+                                }
+                                >
+                                    <div role="button" className="bg-warning text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
+                                        <i className="fas fa-pen"></i>
+                                    </div>
+                                </OverlayTrigger>
+                                <OverlayTrigger
+                                key="edit"
+                                placement="top"
+                                overlay={
+                                    <Tooltip id={`tooltip-top-edit`}>
+                                        Eliminar
+                                    </Tooltip>
+                                }
+                                >
+                                    <div role="button" className="bg-danger text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
+                                        <i className="fas fa-trash"></i>
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                        </div>
+                    </ListGroup.Item>
+                </ListGroup>
             </div>
             <Modals
                     show={modalShow}

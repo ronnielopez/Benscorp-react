@@ -8,6 +8,7 @@ import Alianzas from './components/sections/alianzas';
 import Contacto from './components/sections/contacto';
 import SliderPrincipal from './components/sections/SliderPrincipal'
 import ModalInicio from './components/modal/modalInicio';
+import Noticias from './components/sections/noticias';
 
 function Template() {
   return (
@@ -20,10 +21,18 @@ function Template() {
       <Navbar2 />
       {/* Slider principal */}
         <SliderPrincipal />
+      
+      {/*Section de Noticias*/}
+      <section id='noticias'>
+      <Noticias />
+      </section>
+      
       {/*Section de quienes somos*/}
       <section className="shadow mb-5" id='QuienesSomos'>
       <QuienesSomos/>
       </section>
+      
+
       {/*Section de Servicios*/}
       <section id="servicio">
         <Servicio />
@@ -34,11 +43,11 @@ function Template() {
         <Socios/>
       </section>*/}
 
-      <section id='alianzas'>
+      <section id='alianza'>
         <Alianzas/>
       </section>
       
-      <section id='contacto'>
+      <section id='Contacto'>
         <Contacto/>
       </section>
 

@@ -10,17 +10,41 @@ const InicioAd = () => {
 
     const [isLoading, setLoading] = useState(true)
 
+    const [contador, setContador] = useState(0)
+
     
     useEffect(() => {
-        const unsuscribe = db.collection('noticias').onSnapshot(snapshot => {
-            const data = snapshot.docs.map(doc => doc.data())
-            setNews(data)
+        const unsuscribe = db.collection('noticias').orderBy('creado', 'desc').onSnapshot(snapshot => {
+            let newsData = []
+            snapshot.docs.map(doc => { 
+
+                var id = doc.id
+                var data = doc.data()
+
+                newsData.push({
+                    id : id,
+                    nombre : data.nombre,
+                    creado : data.creado
+                })
+
+
+            })
+            setNews(newsData)
             setLoading(false)
         })
 
         return () => unsuscribe()
 
     }, [])
+
+
+    const deleteNew = (idDocument) => {
+        console.log(idDocument)
+        db.collection('noticias').doc(idDocument).delete().then((success) => {
+            //alert('eliminado con exito')
+        })
+        .catch((error) => console.log(error))
+    }
 
 
     return (
@@ -57,13 +81,13 @@ const InicioAd = () => {
 
                         : 
 
-                        news.map((element) => 
+                        news.map((element, index) => 
                         
                         <ListGroup.Item>
                                 <div className="d-flex justify-content-between">
                                     <div>
                                         <div className="font-weight-bold">{element.nombre}</div>
-                                        <div className="text-secondary">{element.fecha}</div>
+                                        <div className="text-secondary">{ element.creado.toDate().toDateString()  }</div>
                                     </div>
                                     <div className="row align-self-center">
                                         <i className="far fa-image align-self-center mr-3"></i>
@@ -93,7 +117,7 @@ const InicioAd = () => {
                                                 </Tooltip>
                                             }
                                             >
-                                                <div role="button" className="bg-danger text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
+                                                <div role="button" onClick={() => deleteNew(element.id)} className="bg-danger text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
                                                     <i className="fas fa-trash"></i>
                                                 </div>
                                             </OverlayTrigger>

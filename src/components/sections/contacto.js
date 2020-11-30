@@ -6,7 +6,7 @@ const Contacto = () => {
     return (
         <>
            <div className="row justify-content-end esconder">
-      <h2 className="letter_responsive_contact line_black_reverse text-right">Contactanos</h2>
+      <h2 className="letter_responsive_contact text-right">Contactanos</h2>
     </div>
 
     <div className="d-flex justify-content-center d-sm-none">

@@ -38,10 +38,10 @@ function Template() {
         <Servicio />
       </section>
       
-      {/*Section de Servicios
-      <section id='nuestrosocios' className="seccion-tarjeta">
+      {/*Section de Servicios*/}
+      <section id='nuestrosocios' className='shadow'>
         <Socios/>
-      </section>*/}
+      </section>
 
       <section id='alianza'>
         <Alianzas/>

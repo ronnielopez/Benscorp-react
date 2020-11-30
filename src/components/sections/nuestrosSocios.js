@@ -2,6 +2,11 @@ import React from 'react';
 import perfil1 from '../../img/Rectángulo 38.png'
 import perfil2 from '../../img/Rectángulo 39.png'
 import perfil3 from '../../img/Rectángulo 40.png'
+import OwlCarousel from 'react-owl-carousel';  
+import 'owl.carousel/dist/assets/owl.carousel.css';  
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+   
+
 
 const Socios = () => {
     return (
@@ -15,58 +20,95 @@ const Socios = () => {
                 <h2 className="letter_responsive_contact">Nuestros Socios</h2>
             </div>
 
-           
-                <div className="container">
-                    <div className="wrapper">
-                        <div className="tarjeta">
-                            <div className="tarjeta-img"></div>
-                            <img src={perfil1} alt="Imagen de perfil" className="perfil-img"></img>
-                            <h1 className="heading">Lic. Juan Carlos Benitez Perla</h1>
-                            <p className="descripcion">
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Ipsa dolor tempore, repellat, aliquid 
-                            minima maiores voluptas numquam labore alias maxime at recusandae 
-                            ipsum nesciunt eligendi sed eaque. Autem, atque inventore.
-                            </p>
-                            <ul className="redes-sociales">
-                                <li><a href=""><i className="fab fa-linkedin-square"></i></a></li>
-                                <li><a href=""><i className="fas fa-envelope"></i></a></li>
-                            </ul>
+            <div className="gtco-testimonials">
+                <OwlCarousel 
+                items={3} 
+                className='owl-theme' 
+                loop='true' 
+                nav={false} 
+                responsiveClass={true} 
+                margin={0} 
+                center={true}
+                responsive={
+                    {0: {
+                    items: 1,
+                    nav: false
+                  },
+                  680: {
+                    items: 2,
+                    nav: false,
+                    loop: false
+                  },
+                  1000: {
+                    items: 3,
+                    nav: true
+                  }}}>
+
+                        <div className="card text-center"><img className="card-img-top" src={perfil1} alt="" />
+                            <div className="card-body">
+                                <h5 className="line_black">Lic. Juan Carlos Benitez Perla <br />
+                                </h5>
+                                <p className="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                                <div className="justify-content-center">
+                                    <p>Nuestras redes</p>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <a className="links" href="mailto:cuenta@deemail.com"><i className="fas fa-envelope"></i></a>
+                                    </div>
+                                    <div className="col">
+                                        <a className="links" href="https://www.linkedin.com/feed/"><i className="fab fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="tarjeta">
-                            <div className="tarjeta-img"></div>
-                            <img src={perfil2} alt="Imagen de perfil" className="perfil-img"></img>
-                            <h1 className="heading">Lic. Juan Carlos Benitez Perla</h1>
-                            <p className="descripcion">
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Ipsa dolor tempore, repellat, aliquid 
-                            minima maiores voluptas numquam labore alias maxime at recusandae 
-                            ipsum nesciunt eligendi sed eaque. Autem, atque inventore.
-                            </p>
-                            <ul className="redes-sociales">
-                                <li><a href=""><i className="fab fa-linkedin-square"></i></a></li>
-                                <li><a href=""><i className="fas fa-envelope"></i></a></li>
-                            </ul>
+                        <div className="card text-center"><img className="card-img-top" src={perfil3} alt="" />
+                            <div className="card-body">
+                                <h5 className="line_black">Mgtr. Juan Carlos Benitez Sorto <br />
+                                </h5>
+                                <p className="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                                <div className="justify-content-center">
+                                    <p>Nuestras redes</p>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <a className="links" href="mailto:cuenta@deemail.com"><i className="fas fa-envelope"></i></a>
+                                    </div>
+                                    <div className="col">
+                                        <a className="links" href="https://www.linkedin.com/feed/"><i className="fab fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="tarjeta">
-                            <div className="tarjeta-img"></div>
-                            <img src={perfil3} alt="Imagen de perfil" className="perfil-img"></img>
-                            <h1 className="heading">Lic. Juan Carlos Benitez Perla</h1>
-                            <p className="descripcion">
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Ipsa dolor tempore, repellat, aliquid 
-                            minima maiores voluptas numquam labore alias maxime at recusandae 
-                            ipsum nesciunt eligendi sed eaque. Autem, atque inventore.
-                            </p>
-                            <ul className="redes-sociales">
-                                <li><a href=""><i className="fab fa-linkedin-square"></i></a></li>
-                                <li><a href=""><i className="fas fa-envelope"></i></a></li>
-                            </ul>
+                        <div className="card text-center"><img className="card-img-top" src={perfil2} alt="" />
+                            <div className="card-body">
+                                <h5 className="line_black">Mgtr. Rodrigo José Benitez Sorto <br />
+                                </h5>
+                                <p className="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                                impedit quo minus id quod maxime placeat ” </p>
+                                <div className="justify-content-center">
+                                    <p>Nuestras redes</p>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <a className="links" href="mailto:cuenta@deemail.com"><i className="fas fa-envelope"></i></a>
+                                    </div>
+                                    <div className="col">
+                                        <a className="links" href="https://www.linkedin.com/feed/"><i className="fab fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        
+
+
+                </OwlCarousel>
+            </div>
+                        
             
         </>
     )

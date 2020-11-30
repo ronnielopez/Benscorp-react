@@ -847,3 +847,25 @@ a:hover, a:focus {
 .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
   outline: 0;
 }
+
+/*Noticias ----------------- */
+
+.grid-margin {
+  margin-bottom: 2rem;
+}
+
+.stretch-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+}
+
+.stretch-card .card {
+  width: 100%;
+}

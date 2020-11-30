@@ -79,9 +79,6 @@ const Noticias = () => {
                 }
             </Carousel>
             </div>
-            <div className='col-4'>
-                
-                </div> 
             </div>
         </>
     );

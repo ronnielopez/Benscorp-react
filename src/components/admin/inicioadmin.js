@@ -15,6 +15,8 @@ const InicioAd = () => {
 
     const [newItem, setNewItem] = useState('')
 
+    const [dataNew, setdataNew] = useState('');
+
     const [action, setAction] = useState(0)
 
 
@@ -29,7 +31,9 @@ const InicioAd = () => {
                 newsData.push({
                     id: id,
                     nombre: data.nombre,
-                    creado: data.creado
+                    creado: data.creado,
+                    imagen: data.iamgen,
+                    descripcion: data.descripcion
                 })
 
 
@@ -59,10 +63,13 @@ const InicioAd = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#" onClick={() => setModalShow(true)}>Crear noticia</Nav.Link>
+                        <Nav.Link href="#" onClick={() => {
+                            setAction(0)
+                            setModalShow(true)
+                        }}>Crear noticia</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">Cerrar sesion</Nav.Link>
+                        <Nav.Link href="/admin">Cerrar sesion</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -109,7 +116,11 @@ const InicioAd = () => {
                                                 </Tooltip>
                                                     }
                                                 >
-                                                    <div role="button" className="bg-warning text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
+                                                    <div role="button" onClick={() => {
+                                                        setAction(1)
+                                                        setdataNew(element)
+                                                        setModalShow(true)
+                                                    }} className="bg-warning text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm" >
                                                         <i className="fas fa-pen"></i>
                                                     </div>
                                                 </OverlayTrigger>
@@ -129,13 +140,13 @@ const InicioAd = () => {
                                                             icon: "warning",
                                                             buttons: true,
                                                             dangerMode: true,
-                                                          })
-                                                          .then((willDelete) => {
-                                                            if (willDelete) {
-                                                                deleteNew(element.id);        
-                                                            } 
-                                                          });
-                                                        }} className="bg-danger text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
+                                                        })
+                                                            .then((willDelete) => {
+                                                                if (willDelete) {
+                                                                    deleteNew(element.id);
+                                                                }
+                                                            });
+                                                    }} className="bg-danger text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm">
                                                         <i className="fas fa-trash"></i>
                                                     </div>
                                                 </OverlayTrigger>
@@ -151,6 +162,8 @@ const InicioAd = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 animation={false}
+                actionState={action}
+                dataNew={dataNew}
             />
         </>
     );
@@ -163,6 +176,8 @@ function Modals(props) {
     const [descripcion, setDescripcion] = useState("");
 
     const handleClose = props.onHide;
+    const dataNew = props.dataNew;
+    const actionState = props.actionState;
 
     return (
         <Modal
@@ -173,22 +188,25 @@ function Modals(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Crear una nueva noticia
+                    {actionState == 0 ? 'Crear una nueva noticia' : 'Editar una noticia'}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Titulo de la noticia</Form.Label>
-                        <Form.Control type="text" placeholder="" onChange={(event) => setTitulo(event.target.value)} />
+                        <Form.Control type="text" placeholder="" defaultValue={actionState == 0 ? '' : dataNew.nombre} onChange={(event) => setTitulo(event.target.value)} />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput2">
                         <Form.Label>Imagen</Form.Label>
-                        <Form.File accept="image/*,.jpg,.png" onChange={(event) => setImg(event.target.value.split('\\').pop())} />
+
+                        <Form.File accept="image/*,.jpg,.png" defaultValue={actionState == 0 ? '' : dataNew.imagen} onChange={(event) => setImg(event.target.value.split('\\').pop())} />
+
+
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlTextarea4">
                         <Form.Label>Descripcion</Form.Label>
-                        <Form.Control as="textarea" rows={3} onChange={(event) => setDescripcion(event.target.value)} />
+                        <Form.Control as="textarea" defaultValue={actionState == 0 ? '' : dataNew.descripcion} rows={3} onChange={(event) => setDescripcion(event.target.value)} />
                     </Form.Group>
                 </Form>
             </Modal.Body>
@@ -196,9 +214,9 @@ function Modals(props) {
                 <Button variant='secondary' onClick={props.onHide}>Cerrar</Button>
                 <Button variant='success' onClick={() => {
                     const datos = {
-                       nombre : titulo,
-                       img:img,
-                       descripcion:descripcion 
+                        nombre: titulo,
+                        img: img,
+                        descripcion: descripcion
                     };
                     addNew(datos).then((success) => {
                         swal("Noticia agregada", "La noticia ha sido agregada con exito", "success");

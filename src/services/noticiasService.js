@@ -12,6 +12,17 @@ const addNew = (data) => {
     })
 }
 
+const modificarNew = (data) =>{
+
+    return db.collection('noticias').doc(data.id).update({
+        nombre: data.nombre,
+        fecha:'hoy',
+        imagen: data.img,
+        descripcion: data.descripcion,
+        creado: firebase.firestore.Timestamp.fromDate(new Date())
+    })
+}
+
 export {
-    addNew,
+    addNew,modificarNew
 }

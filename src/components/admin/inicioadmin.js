@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Table, Form, Modal, Button, ListGroup, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { db } from '../../services/firebase';
 import swal from 'sweetalert';
-import { addNew, getAllNews } from '../../services/noticiasService';
+import { addNew, modificarNew } from '../../services/noticiasService';
 
 const InicioAd = () => {
 
@@ -10,10 +10,6 @@ const InicioAd = () => {
     const [news, setNews] = useState([])
 
     const [isLoading, setLoading] = useState(true)
-
-    const [contador, setContador] = useState(0)
-
-    const [newItem, setNewItem] = useState('')
 
     const [dataNew, setdataNew] = useState('');
 
@@ -32,7 +28,7 @@ const InicioAd = () => {
                     id: id,
                     nombre: data.nombre,
                     creado: data.creado,
-                    imagen: data.iamgen,
+                    imagen: data.imagen,
                     descripcion: data.descripcion
                 })
 
@@ -54,7 +50,6 @@ const InicioAd = () => {
         })
             .catch((error) => swal("Error al eliminar", "Contacte con el administrador", "error"))
     }
-
 
     return (
         <>
@@ -200,7 +195,7 @@ function Modals(props) {
                     <Form.Group controlId="exampleForm.ControlInput2">
                         <Form.Label>Imagen</Form.Label>
 
-                        <Form.File accept="image/*,.jpg,.png" defaultValue={actionState == 0 ? '' : dataNew.imagen} onChange={(event) => setImg(event.target.value.split('\\').pop())} />
+                        <Form.File accept="image/*,.jpg,.png" label={actionState == 0 ? '' : dataNew.imagen} onChange={(event) => setImg(event.target.value.split('\\').pop())} />
 
 
                     </Form.Group>
@@ -212,17 +207,31 @@ function Modals(props) {
             </Modal.Body>
             <Modal.Footer>
                 <Button variant='secondary' onClick={props.onHide}>Cerrar</Button>
+                
                 <Button variant='success' onClick={() => {
                     const datos = {
                         nombre: titulo,
                         img: img,
-                        descripcion: descripcion
+                        descripcion: descripcion,
+                        id: dataNew.id
                     };
+                    actionState == 0 ? 
                     addNew(datos).then((success) => {
                         swal("Noticia agregada", "La noticia ha sido agregada con exito", "success");
                         handleClose();
                     }).catch((error) => swal("Error al agregar", "Contacte con el administrador", "error"))
-                }}>Crear </Button>
+                    
+                :
+                    modificarNew(datos).then((success) => {
+                        swal("Noticia modificada", "La noticia ha sido modificada con exito", "success");
+                        handleClose();
+                    }).catch((error) => {swal("Error al agregar", 'Contacte con el administrador' , "error")
+                    console.log(error);
+                })
+                
+            }
+        }
+            >{actionState == 0 ? 'Crear' : 'Modificar'} </Button>
             </Modal.Footer>
         </Modal>
     );

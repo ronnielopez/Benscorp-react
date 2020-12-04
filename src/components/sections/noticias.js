@@ -24,7 +24,7 @@ const Noticias = () => {
                 newsData.push({
                     id: ids,
                     nombre: data.nombre,
-                    creado: data.creado,
+                    fecha: data.fecha,
                     imagen: data.imagen,
                     descripcion: data.descripcion
                 })
@@ -55,7 +55,7 @@ const Noticias = () => {
                                 interval={50000}
                             >
                                 {news.map((element) =>
-                                    <Carousel.Item>
+                                    <Carousel.Item key={element.id}>
                                         <img
                                             className="d-block w-100"
                                             src={'assets/img/' + element.imagen}
@@ -86,13 +86,13 @@ const Noticias = () => {
 
                                     news.map((element , index) =>
                                     <>
-                                            <div className="card" onClick={()=>setIndex(index)}>
+                                            <div className="card" onClick={()=>setIndex(index)} key={index}>
                                                 <div className="card-img-overlay"> <span className="badge badge-pill bg-azul text-white">Noticia</span> </div>
                                                 <div className="card-body">
                                                     <div className="news-title">
                                                         <h2 className=" title-small"><a href="#">{element.nombre}</a></h2>
                                                     </div>
-                                                    <p className="card-text"><small className="text-time"><em>{element.creado.toDate().toDateString()}</em></small></p>
+                                                    <p className="card-text"><small className="text-time"><em>{element.fecha.toDate().toDateString()}</em></small></p>
                                                 </div>
                                             </div>
                                         </>

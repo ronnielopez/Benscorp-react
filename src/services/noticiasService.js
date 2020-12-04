@@ -5,7 +5,7 @@ const addNew = (data) => {
     
     return db.collection('noticias').add({
         nombre: data.nombre,
-        fecha:'hoy',
+        fecha:data.fecha,
         imagen: data.img,
         descripcion: data.descripcion,
         creado: firebase.firestore.Timestamp.fromDate(new Date())
@@ -16,7 +16,7 @@ const modificarNew = (data) =>{
 
     return db.collection('noticias').doc(data.id).update({
         nombre: data.nombre,
-        fecha:'hoy',
+        fecha:data.fecha,
         imagen: data.img,
         descripcion: data.descripcion,
         creado: firebase.firestore.Timestamp.fromDate(new Date())

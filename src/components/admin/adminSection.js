@@ -1,6 +1,7 @@
 import React, { setState, useState } from 'react';
 import swal from 'sweetalert';
 import { signIn } from '../../services/function';
+import firebase from 'firebase';
 
 
 const Adminis = () => {
@@ -18,6 +19,7 @@ const Adminis = () => {
             swal("Datos incorrectos", "Contraseña o correo incorrectos", "error");
         }
     }
+
     return (
         <>
             <div className='container mt-4'>

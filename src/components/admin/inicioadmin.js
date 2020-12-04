@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Navbar, Nav, Table, Form, Modal, Button, ListGroup, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { db } from '../../services/firebase';
 import swal from 'sweetalert';
 import { addNew, modificarNew } from '../../services/noticiasService';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { data } from 'jquery';
+
+
 
 const InicioAd = () => {
 
@@ -11,12 +17,17 @@ const InicioAd = () => {
 
     const [isLoading, setLoading] = useState(true)
 
-    const [dataNew, setdataNew] = useState('');
+    const [datanew, setdatanew] = useState('');
 
     const [action, setAction] = useState(0)
 
+    const history = useHistory();
 
     useEffect(() => {
+        let token = sessionStorage.getItem('idToken');
+        if (token === null) {
+            history.push("/admin");
+        }
         const unsuscribe = db.collection('noticias').orderBy('creado', 'desc').onSnapshot(snapshot => {
             let newsData = []
             snapshot.docs.map(doc => {
@@ -29,7 +40,8 @@ const InicioAd = () => {
                     nombre: data.nombre,
                     creado: data.creado,
                     imagen: data.imagen,
-                    descripcion: data.descripcion
+                    descripcion: data.descripcion,
+                    fecha: data.fecha
                 })
 
 
@@ -90,15 +102,15 @@ const InicioAd = () => {
 
                             news.map((element, index) =>
 
-                                <ListGroup.Item>
+                                <ListGroup.Item key={element.id}>
                                     <div className="d-flex justify-content-between">
                                         <div>
                                             <div className="font-weight-bold">{element.nombre}</div>
                                             <div className="text-secondary">{element.creado.toDate().toDateString()}</div>
                                         </div>
                                         <div className="row align-self-center">
-                                            <i className="far fa-image align-self-center mr-3"></i>
-                                            <span>Contiene imagen</span>
+                                            <i className="fas fa-calendar-week align-self-center mr-3"></i>
+                                            <span>{element.fecha.toDate().toDateString()}</span>
                                         </div>
                                         <div>
                                             <div className="row">
@@ -113,7 +125,7 @@ const InicioAd = () => {
                                                 >
                                                     <div role="button" onClick={() => {
                                                         setAction(1)
-                                                        setdataNew(element)
+                                                        setdatanew(element)
                                                         setModalShow(true)
                                                     }} className="bg-warning text-white mr-2 pt-1 pb-1 pl-2 pr-2 rounded shadow-sm" >
                                                         <i className="fas fa-pen"></i>
@@ -157,8 +169,8 @@ const InicioAd = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 animation={false}
-                actionState={action}
-                dataNew={dataNew}
+                actionstate={action}
+                datanew={datanew}
             />
         </>
     );
@@ -166,14 +178,21 @@ const InicioAd = () => {
 
 function Modals(props) {
 
+    const datanew = props.datanew;
     const [img, setImg] = useState("");
     const [titulo, setTitulo] = useState("");
     const [descripcion, setDescripcion] = useState("");
-
     const handleClose = props.onHide;
-    const dataNew = props.dataNew;
-    const actionState = props.actionState;
+    const actionstate = props.actionstate;
+    const [startDate, setStartDate] = useState(new Date());
 
+    useEffect(()=>{
+        if(actionstate === 1){
+            setImg(datanew.imagen);
+            setTitulo(datanew.nombre);
+            setDescripcion(datanew.descripcion);
+        }
+    }, [datanew.imagen, datanew.nombre, datanew.descripcion])
     return (
         <Modal
             {...props}
@@ -181,57 +200,71 @@ function Modals(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
+
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    {actionState == 0 ? 'Crear una nueva noticia' : 'Editar una noticia'}
+                    {actionstate == 0 ? 'Crear una nueva noticia' : 'Editar una noticia'}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
-                    <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Group controlId="exampleForm.ControlInput1" >
                         <Form.Label>Titulo de la noticia</Form.Label>
-                        <Form.Control type="text" placeholder="" defaultValue={actionState == 0 ? '' : dataNew.nombre} onChange={(event) => setTitulo(event.target.value)} />
+                        <Form.Control type="text" placeholder="" defaultValue={actionstate == 0 ? '' : datanew.nombre} onChange={(event) => setTitulo(event.target.value)} />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput2">
                         <Form.Label>Imagen</Form.Label>
-
-                        <Form.File accept="image/*,.jpg,.png" label={actionState == 0 ? '' : dataNew.imagen} onChange={(event) => setImg(event.target.value.split('\\').pop())} />
-
-
+                        <Form.File accept="image/*,.jpg,.png" label={actionstate == 0 ? '' : datanew.imagen} onChange={(event) => setImg(event.target.value.split('\\').pop())} />
+                    </Form.Group>
+                    <Form.Group className='row'>
+                        <Form.Label className='col-md-2'>Fecha </Form.Label>
+                        <DatePicker className='col-md-8' dateFormat="dd/MM/yyyy" selected={actionstate === 0 ? startDate : datanew.fecha.toDate()} onChange={date => setStartDate(date)} />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlTextarea4">
                         <Form.Label>Descripcion</Form.Label>
-                        <Form.Control as="textarea" defaultValue={actionState == 0 ? '' : dataNew.descripcion} rows={3} onChange={(event) => setDescripcion(event.target.value)} />
+                        <Form.Control as="textarea" defaultValue={actionstate == 0 ? '' : datanew.descripcion} rows={3} onChange={(event) => setDescripcion(event.target.value)} />
                     </Form.Group>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant='secondary' onClick={props.onHide}>Cerrar</Button>
-                
+
                 <Button variant='success' onClick={() => {
-                    const datos = {
+                    let datos = {
                         nombre: titulo,
                         img: img,
                         descripcion: descripcion,
-                        id: dataNew.id
-                    };
-                    actionState == 0 ? 
-                    addNew(datos).then((success) => {
-                        swal("Noticia agregada", "La noticia ha sido agregada con exito", "success");
-                        handleClose();
-                    }).catch((error) => swal("Error al agregar", "Contacte con el administrador", "error"))
-                    
-                :
-                    modificarNew(datos).then((success) => {
-                        swal("Noticia modificada", "La noticia ha sido modificada con exito", "success");
-                        handleClose();
-                    }).catch((error) => {swal("Error al agregar", 'Contacte con el administrador' , "error")
-                    console.log(error);
-                })
-                
-            }
-        }
-            >{actionState == 0 ? 'Crear' : 'Modificar'} </Button>
+                        id: datanew.id,
+                        fecha: startDate
+                    }
+                     console.log(datos);   
+                    if(datos.nombre != '' && datos.img != '' && datos.descripcion != ''){
+                        actionstate == 0 ?
+                            addNew(datos).then((success) => {
+                                swal("Noticia agregada", "La noticia ha sido agregada con exito", "success");
+                                handleClose();
+                                setTitulo("");
+                                setDescripcion("");
+                                setImg("");
+                            }).catch((error) => swal("Error al agregar", "Contacte con el administrador", "error"))
+
+                            :
+                            modificarNew(datos).then((success) => {
+                                swal("Noticia modificada", "La noticia ha sido modificada con exito", "success");
+                                handleClose();
+                                setImg('');
+                                setDescripcion('');
+                                setTitulo('');
+                            }).catch((error) => {
+                                swal("Error al agregar", 'Contacte con el administrador', "error")
+                                console.log(error);
+                            })
+                        }else{
+                            swal('Llene los datos');
+                        }
+                }
+                }
+                >{actionstate == 0 ? 'Crear' : 'Modificar'} </Button>
             </Modal.Footer>
         </Modal>
     );

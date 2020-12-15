@@ -10,7 +10,9 @@ const Adminis = () => {
     const [error, setError] = useState("");
     const login = async ({ email, password }) => {
         try {
-            await signIn(email, password)
+            let hol = signIn(email, password);
+             await hol
+             sessionStorage.setItem('idToken', hol.i.user.email); 
             swal({title: 'Bienvenido', icon: 'success', button: 'Aceptar', closeOnClickOutside: false, closeOnEsc: false}).then(value=>{window.location.href = 'admin/inicio'});
         } catch (error) {
             setError({

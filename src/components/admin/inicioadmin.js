@@ -214,7 +214,7 @@ function Modals(props) {
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput2">
                         <Form.Label>Imagen</Form.Label>
-                        <Form.File accept="image/*,.jpg,.png" label={actionstate == 0 ? '' : datanew.imagen} onChange={(event) => setImg(event.target.value.split('\\').pop())} />
+                        <Form.File accept="image/*,.jpg,.png" label={actionstate == 0 ? '' : datanew.imagen} onChange={(event) => setImg(URL.createObjectURL(event.target.files[0]))} />
                     </Form.Group>
                     <Form.Group className='row'>
                         <Form.Label className='col-md-2'>Fecha </Form.Label>

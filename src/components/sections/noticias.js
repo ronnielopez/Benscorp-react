@@ -58,7 +58,7 @@ const Noticias = () => {
                                     <Carousel.Item key={element.id}>
                                         <img
                                             className="d-block w-100"
-                                            src={'assets/img/' + element.imagen}
+                                            src={element.imagen}
                                             alt="First slide"
                                         />
                                         <Carousel.Caption>

@@ -71,7 +71,7 @@ const Noticias = () => {
                             </Carousel>
                         </div>
                         
-                        <div className='col-md-3'>
+                        <div className='col-md-3 scroll' >
                             {
 
                                 isLoading ?

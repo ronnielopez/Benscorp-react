@@ -891,3 +891,8 @@ a:hover, a:focus {
 .text-time{color: #081156; font-weight: 600;}
 .banner-sec .card-img-overlay{padding: 0; top: 3px; left: 7px; height: 20%}
 .bg-azul{background-color:#081156; }
+
+.scroll{
+  height: 250px; 
+  overflow-y: scroll;
+}

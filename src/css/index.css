@@ -904,3 +904,7 @@ a:hover, a:focus {
   max-height: 50vh !important;
   object-fit: contain; 
 }
+
+.transparente{
+  background-color: #f5f5f5;
+}

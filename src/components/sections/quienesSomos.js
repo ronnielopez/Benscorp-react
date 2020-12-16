@@ -10,7 +10,7 @@ const QuienesSomos = () => {
                 onSelect={(k) => setKey(k)}
                 transition={false}
             >
-                <Tab eventKey="Historia" title="Historia">
+                <Tab eventKey="Historia" title="Historia" className='transparente'>
                     <p className="m-3">Benscorp nace en 2003 como una empresa consultora, enfocada en solucionar y asesorar
                 al mercado salvadoreño ante los distintos problemas asociados con la correcta ejecución
                 y mantenimiento, a mediano y a largo plazo, de un modelo de negocios. Sean estas dificultades:

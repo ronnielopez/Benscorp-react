@@ -42,7 +42,7 @@ const Noticias = () => {
     return (
         <>
             <div className="banner-sec">
-                <div className="container">
+                <div className="">
                     <div className="row">
                     <div className="col-md-9 top-slider">
                             <Carousel slide={false}
@@ -57,7 +57,7 @@ const Noticias = () => {
                                 {news.map((element) =>
                                     <Carousel.Item key={element.id}>
                                         <img
-                                            className="d-block w-100"
+                                            className="d-block w-100 imagen_noticia"
                                             src={element.imagen}
                                             alt="First slide"
                                         />

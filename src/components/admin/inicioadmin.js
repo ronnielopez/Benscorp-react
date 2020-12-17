@@ -76,7 +76,9 @@ const InicioAd = () => {
                         }}>Crear noticia</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="/admin">Cerrar sesion</Nav.Link>
+                        <Nav.Link href="/admin" onClick={()=>{
+                            sessionStorage.removeItem('idToken');
+                        }}>Cerrar sesion</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -214,7 +216,7 @@ function Modals(props) {
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput2">
                         <Form.Label>Imagen</Form.Label>
-                        <Form.File accept="image/*,.jpg,.png" label={actionstate == 0 ? '' : datanew.imagen} onChange={(event) => setImg(URL.createObjectURL(event.target.files[0]))} />
+                        <Form.File accept="image/*,.jpg,.png" label={actionstate == 0 ? '' : datanew.imagen} onChange={(event) => setImg(event.target.files[0])} />
                     </Form.Group>
                     <Form.Group className='row'>
                         <Form.Label className='col-md-2'>Fecha </Form.Label>

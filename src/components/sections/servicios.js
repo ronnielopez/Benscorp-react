@@ -26,7 +26,7 @@ const Servicio = () => {
                     animation={false}
                 />
 
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Asesoria fiscal especializada</h4></Card.Title>
@@ -43,7 +43,7 @@ const Servicio = () => {
                     </Card>
                 </div>
 
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Constitución e inscripción de empresas</h4></Card.Title>
@@ -60,7 +60,7 @@ const Servicio = () => {
                 </div>
 
 
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Asesoramiento legal integral</h4></Card.Title>
@@ -78,7 +78,7 @@ const Servicio = () => {
                 </div>
 
                 {/*--------------- Segunda fila --------------*/}
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Servicio de outsourcing contable</h4></Card.Title>
@@ -93,7 +93,7 @@ const Servicio = () => {
                     </Card>
                 </div>
 
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Estudios de precios de transferencia</h4></Card.Title>
@@ -110,7 +110,7 @@ const Servicio = () => {
                 </div>
 
 
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Análisis estratégicos de negocios</h4></Card.Title>
@@ -129,7 +129,7 @@ const Servicio = () => {
 
                 {/*--------------- Tercera fila --------------*/}
 
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Reestructuración empresarial</h4></Card.Title>
@@ -147,7 +147,7 @@ const Servicio = () => {
                 </div>
 
 
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Servicio de traducción de textos legales</h4></Card.Title>
@@ -164,7 +164,7 @@ const Servicio = () => {
                 </div>
 
 
-                <div className="col-lg-4 col-md-6">
+                <div className="col-lg-4 col-sm-12">
                     <Card>
                         <Card.Body>
                             <Card.Title className='text-center'><h4>Gestión de proyectos de innovación</h4></Card.Title>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../services/firebase';
 import { Carousel } from 'react-bootstrap';
+import firebase from 'firebase';
 
 const Noticias = () => {
 
@@ -18,8 +19,8 @@ const Noticias = () => {
             let newsData = []
             snapshot.docs.map(doc => {
 
-                var ids = doc.id
-                var data = doc.data()
+                var ids = doc.id;
+                var data = doc.data();
 
                 newsData.push({
                     id: ids,
@@ -44,7 +45,7 @@ const Noticias = () => {
             <div className="banner-sec">
                 <div className="">
                     <div className="row">
-                    <div className="col-md-9 top-slider">
+                        <div className="col-md-9 top-slider">
                             <Carousel slide={false}
                                 fade={false}
                                 activeIndex={index}
@@ -58,7 +59,8 @@ const Noticias = () => {
                                     <Carousel.Item key={element.id}>
                                         <img
                                             className="d-block w-100 imagen_noticia"
-                                            src={element.imagen}
+                                            id={element.imagen}
+                                            src={Img(element.imagen)}
                                             alt="First slide"
                                         />
                                         <Carousel.Caption>
@@ -70,7 +72,7 @@ const Noticias = () => {
                                 }
                             </Carousel>
                         </div>
-                        
+
                         <div className='col-md-3 scroll' >
                             {
 
@@ -84,9 +86,9 @@ const Noticias = () => {
 
                                     :
 
-                                    news.map((element , index) =>
-                                    <>
-                                            <div className="card" onClick={()=>setIndex(index)} key={index}>
+                                    news.map((element, index) =>
+                                        <>
+                                            <div className="card" onClick={() => setIndex(index)} key={index}>
                                                 <div className="card-img-overlay"> <span className="badge badge-pill bg-azul text-white">Noticia</span> </div>
                                                 <div className="card-body">
                                                     <div className="news-title">
@@ -105,6 +107,15 @@ const Noticias = () => {
 
         </>
     );
+}
+
+function Img(image) {
+    let storageRef = firebase.storage().ref();
+    let spaceRef = storageRef.child('image' + image);
+    storageRef.child('image/'+ image).getDownloadURL().then((url)=>{
+
+        document.getElementById(`${image}`).src = url;
+    })
 }
 
 export default Noticias

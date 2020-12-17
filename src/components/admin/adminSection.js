@@ -1,7 +1,7 @@
 import React, { setState, useState } from 'react';
 import swal from 'sweetalert';
 import { signIn } from '../../services/function';
-import firebase from 'firebase';
+
 
 
 const Adminis = () => {

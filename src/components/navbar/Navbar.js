@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal, Button, Form} from 'react-bootstrap';
 
 const Navbar = () => {
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex, e) => {
+        setIndex(selectedIndex);
+    };
+
+    const [modalShow, setModalShow] = React.useState(false);
     return (
         <>
             <nav className="navbar navbar-expand-md navbar-light bg-light">
@@ -43,15 +51,57 @@ const Navbar = () => {
                 <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 ">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
-                                <h2 className="text-right" data-toggle="modal" data-target="#contactmodal">¡Sera un gusto asesorarte!</h2>
+                            <a className="nav-link" href='#' onClick={() => setModalShow(true)}>
+                                <h2 className="text-right">¡Sera un gusto asesorarte!</h2>
                             </a>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <Modals
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    animation={false}
+                />
         </>
     )
+}
+
+function Modals(props) {
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Ponte en contacto con nosotros
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <Form>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                        <Form.Label>Nombre completo</Form.Label>
+                        <Form.Control type="text" placeholder="John Doe" />
+                    </Form.Group>
+                    <Form.Group controlId="exampleForm.ControlInput2">
+                        <Form.Label>Correo electronico </Form.Label>
+                        <Form.Control type="email" placeholder="name@example.com" />
+                    </Form.Group>
+                    <Form.Group controlId="exampleForm.ControlTextarea4">
+                        <Form.Label>Mensaje</Form.Label>
+                        <Form.Control as="textarea" rows={3} />
+                    </Form.Group>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant='secondary' onClick={props.onHide}>Cerrar</Button>
+                <Button variant='success'>Enviar </Button>
+            </Modal.Footer>
+        </Modal>
+    );
 }
 
 export default Navbar

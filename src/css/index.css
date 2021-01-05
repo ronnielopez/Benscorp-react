@@ -690,6 +690,10 @@ a:hover, a:focus {
   font-size: 3rem;
 }
 
+.logo{
+  margin-left: 40px;
+}
+
 @media screen and (min-width: 700px){
   .wrapper{
     flex-direction: row;
